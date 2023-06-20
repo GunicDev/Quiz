@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+    <script
+      src="https://kit.fontawesome.com/71eaa9141e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 id="header-text">Welcome to Quiz</h1>
+    </header>
+    <section id="homepage-section" class="homepage">
+      <div class="homepage_container">
+        <div class="user_container">
+          <h1>Write your Name:</h1>
+          <input
+            id="username-input"
+            type="text"
+            class="username_input"
+            placeholder="Player Name"
+          />
+          <button id="start-game-button" class="start_button">
+            Start GAME
+          </button>
+        </div>
+      </div>
+    </section>
+    <section id="play-again-section" class="homepage hidden">
+      <div class="homepage_container">
+        <div class="user_container">
+          <h1>You lost the game!!</h1>
+
+          <button id="play-again-button" class="start_button">
+            Play Again!!!
+          </button>
+          <h1>Your score is : 5</h1>
+          <button id="go-to-homepage" class="start_button">
+            Go to homepage
+          </button>
+        </div>
+      </div>
+    </section>
+    <section id="game-section" class="game hidden">
+      <div class="left_container">
+        <div class="all_score_box">
+          <div class="show_score_box">
+            <h1>Your score:</h1>
+            <h1 id="user-score">0</h1>
+          </div>
+          <div class="show_score_box">
+            <h1>Best score:</h1>
+            <h1 id="best-score">0</h1>
+          </div>
+          <div class="show_score_box">
+            <h1>Number of attempts:</h1>
+            <h1 id="attempts-number">5</h1>
+          </div>
+          <div id="timer" class="show_score_box">
+            <h2>Time left:</h2>
+            <h1 id="time-left">05:00</h1>
+          </div>
+        </div>
+      </div>
+      <div class="right_container">
+        <div class="question_box">
+          <div class="main_question_box">
+            <i
+              class="question_animation_left fa-duotone fa-question fa-beat-fade fa-2xl"
+            ></i>
+            <div class="main_question">
+              <h1 id="question-from-server"></h1>
+            </div>
+            <i
+              class="question_animation_right fa-duotone fa-question fa-beat-fade fa-2xl"
+            ></i>
+          </div>
+          <div id="answers"></div>
+          <h1 id="error-message" class="hidden error_message">
+            Wrong answer!!!
+          </h1>
+        </div>
+      </div>
+    </section>
+    <footer>@Coppy right GunicDev</footer>
+    <script src="script.js"></script>
+  </body>
+</html>
