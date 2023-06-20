@@ -30,20 +30,45 @@
         </div>
       </div>
     </section>
-    <section id="play-again-section" class="homepage hidden">
+    <section id="play-again-section" class="play_again hidden">
       <div class="homepage_container">
         <div class="user_container">
           <h1>You lost the game!!</h1>
 
-          <button id="play-again-button" class="start_button">
+          <button onclick="playAgainButton()" class="start_button">
             Play Again!!!
           </button>
-          <h1>Your score is : 5</h1>
-          <button id="go-to-homepage" class="start_button">
+          <h1 id="show-player-score"></h1>
+          <button onclick="goToHomePageButton()" class="start_button">
             Go to homepage
           </button>
+          <h1 class="best_plyers_table" onclick="checkBestPlayer()">
+            CHECK BEST PLAYERS!!!!
+          </h1>
         </div>
       </div>
+    </section>
+    <section id="best-players-section" class="best_player hidden">
+      <div class="best_player_container">
+        <div>
+          <button onclick="playAgainButton()" class="start_button">
+            Play Again!!!
+          </button>
+          <button onclick="goToHomePageButton()" class="start_button">
+            Go to homepage
+          </button>
+          
+          <div class="player_lists">
+            <div class="player_list headers">
+              <p>Ime i prezime/Naziv</p>
+              <p>Količine Mlijeka</p>
+            </div>
+            <div id="best-plyers-table"></div>
+          </div>          
+        </div>       
+      </div>
+      <div >
+       
     </section>
     <section id="game-section" class="game hidden">
       <div class="left_container">

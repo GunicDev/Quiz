@@ -28,6 +28,21 @@ footer {
   width: 100%;
   height: 100%;
 }
+.play_again {
+  background-color: #e57c23;
+  margin: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.best_player {
+  background-color: #e57c23;
+  margin: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
 
 .homepage_container {
   background-color: #025464;
@@ -287,4 +302,38 @@ footer {
 .error_message {
   color: red;
   font-weight: 900;
+}
+
+/* BEST PLYERS*/
+.best_player_container {
+  text-align: center;
+  width: 80%;
+  margin: 10%;
+}
+/*TABLE*/
+
+.player_lists {
+  max-width: 150rem;
+}
+
+.player_list {
+  color: #000;
+  font-weight: 900;
+  font-size: xx-large;
+  display: flex;
+  cursor: default;
+}
+
+.player_list.headers {
+  font-size: xx-large;
+  background: #000;
+  color: whitesmoke;
+}
+
+.player_list p {
+  border: 1px solid #000;
+
+  margin: 0;
+  padding: 1rem 1rem;
+  width: 70%;
 }

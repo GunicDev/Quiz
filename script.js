@@ -1,9 +1,10 @@
 //GLOBAL VARIABLES
 const headerText = document.getElementById('header-text');
 let userNameInput = document.getElementById('username-input');
+
 const userNameConfirmButton = document.getElementById('start-game-button');
-const playAgainButton = document.getElementById('play-again-button');
-const goToHomePageButton = document.getElementById('go-to-homepage');
+//const playAgainButton = document.getElementById('play-again-button');
+//const goToHomePageButton = document.getElementById('go-to-homepage');
 
 const questionFromServer = document.getElementById('question-from-server');
 const showAnswers = document.getElementById('answers');
@@ -12,11 +13,15 @@ const userScore = document.getElementById('user-score');
 const attemtsCounter = document.getElementById('attempts-number');
 const bestScore = document.getElementById('best-score');
 const timeLeft = document.getElementById('time-left');
+const showPlayerScore = document.getElementById('show-player-score');
+const bestPlayerTable = document.getElementById('best-plyers-table');
 
 //sectios
 const homepageSection = document.getElementById('homepage-section');
 const gameSection = document.getElementById('game-section');
 const lostGameSectio = document.getElementById('play-again-section');
+const bestPlayerSection = document.getElementById('best-players-section');
+
 //Global storage data
 let clickedSolution = '';
 const storedAllAnswers = [];
@@ -27,28 +32,6 @@ const bestScores = [];
 let timer;
 const savePlayerAndScore = [];
 let player = '';
-
-/*
-{category: 'Sports', type: 'multiple', difficulty: 'easy', question: 'In baseball, how many fouls are an out?', correct_answer: '0', …}
-category
-: 
-"Sports"
-correct_answer
-: 
-"0"
-difficulty
-: 
-"easy"
-incorrect_answers
-: 
-(3) ['5', '3', '2']
-question
-: 
-"In baseball, how many fouls are an out?"
-type
-: 
-"multiple"
-*/
 
 async function loadQuestion() {
   const APIUrl =
@@ -209,39 +192,74 @@ const homePage = function () {
   homepageSection.classList.remove('hidden');
   lostGameSectio.classList.add('hidden');
   gameSection.classList.add('hidden');
+  bestPlayerSection.classList.add('hidden');
 };
 
 const playGame = function () {
   homepageSection.classList.add('hidden');
   lostGameSectio.classList.add('hidden');
+  bestPlayerSection.classList.add('hidden');
   gameSection.classList.remove('hidden');
+};
+
+const bestScoreTable = function () {
+  homepageSection.classList.add('hidden');
+  lostGameSectio.classList.add('hidden');
+  gameSection.classList.add('hidden');
+  bestPlayerSection.classList.remove('hidden');
+  table();
 };
 
 const lostGame = function () {
   plyerAndScore(player, userSumScore);
+  showPlayerScore.innerHTML = `You score : ${userSumScore}`;
   homepageSection.classList.add('hidden');
   lostGameSectio.classList.remove('hidden');
   gameSection.classList.add('hidden');
+  bestPlayerSection.classList.add('hidden');
 };
+
+//BUTTONS
 
 userNameConfirmButton.onclick = function () {
   headerText.innerHTML = `Welcome ${userNameInput.value}`;
   player = userNameInput.value;
-  userNameInput.value = 'Player Name';
+  userNameInput.value = '';
+  userNameInput.placeholder = 'Player Name';
   playGame();
   clearInterval(timer);
   timer = startLogOutTimer();
 };
 
-// YOU LOSE PAGE
-playAgainButton.onclick = function () {
+const playAgainButton = function () {
   playGame();
   clearInterval(timer);
   timer = startLogOutTimer();
 };
 
-goToHomePageButton.onclick = function () {
+const goToHomePageButton = function () {
+  headerText.innerHTML = `Welcome Quiz`;
   clearInterval(timer);
   timer = 0;
   homePage();
 };
+
+const checkBestPlayer = function () {
+  bestScoreTable();
+};
+
+const table = function () {
+  bestPlayerTable.innerHTML = '';
+  savePlayerAndScore.sort((a, b) => b.playerScore - a.playerScore);
+  savePlayerAndScore.forEach((value, i) => {
+    console.log(value.playerScore);
+    bestPlayerTable.innerHTML += `
+    <div class="player_list">
+    <p>${savePlayerAndScore[i].playerName}</p>
+    <p>${savePlayerAndScore[i].playerScore}</p>
+  </div>
+   
+  `;
+  });
+};
+table();
