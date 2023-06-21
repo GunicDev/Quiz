@@ -407,3 +407,80 @@ footer {
   padding: 1rem 1rem;
   width: 70%;
 }
+
+/*MOBILE VERSION*/
+
+@media only screen and (max-width: 1200px) {
+  .homepage,
+  .best_player {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #e57c23;
+    margin: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+  .play_again {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #e57c23;
+    margin: 0;
+
+    width: 100%;
+    height: 100%;
+  }
+  .play_again_container {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #025464;
+    border: solid 3px black;
+    border-radius: 10px;
+    box-shadow: #025464 0 4px 8px;
+    color: #fff;
+    font-size: xx-large;
+    width: 750px;
+    height: 100%;
+    text-align: center;
+    margin: 10%;
+  }
+
+  .homepage_container {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #025464;
+    border: solid 3px black;
+    border-radius: 10px;
+    box-shadow: #025464 0 4px 8px;
+    color: #fff;
+    font-size: xx-large;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin: 15% 30% 15% 30%;
+  }
+  .user_container {
+    display: inline-block;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .main_question_box {
+    display: flex;
+    text-align: center;
+    font-size: medium;
+  }
+  .show_score_box {
+    font-size: medium;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #025464;
+    border: solid 3px black;
+    border-radius: 10px;
+    box-shadow: #025464 0 4px 8px;
+    padding: 0.5rem;
+    margin: 1rem;
+    display: inline-block;
+    text-align: center;
+  }
+}

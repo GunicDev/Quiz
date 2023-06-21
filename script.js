@@ -30,24 +30,7 @@ let userSumScore = 0;
 let attemptsLeft = 5;
 const bestScores = [];
 let timer;
-const savePlayerAndScore = [
-  {
-    playerName: 'laksd',
-    playerScore: 12,
-  },
-  {
-    playerName: 'laksdla',
-    playerScore: 1,
-  },
-  {
-    playerName: 'jfjdj',
-    playerScore: 2,
-  },
-  {
-    playerName: 'stop',
-    playerScore: 3,
-  },
-];
+const savePlayerAndScore = [];
 let player = '';
 
 async function loadQuestion() {
@@ -249,6 +232,7 @@ userNameConfirmButton.onclick = function () {
 };
 
 const playAgainButton = function () {
+  errorMessage.classList.add('hidden');
   playGame();
   clearInterval(timer);
   timer = startLogOutTimer();
