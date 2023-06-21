@@ -107,7 +107,6 @@ function CheckSolution(solution, correctAnswer) {
     loadQuestion();
   } else {
     numerOfAttempts();
-
     errorMessage.classList.remove('hidden');
   }
 }
@@ -193,6 +192,8 @@ const homePage = function () {
   lostGameSectio.classList.add('hidden');
   gameSection.classList.add('hidden');
   bestPlayerSection.classList.add('hidden');
+  //reset error message
+  errorMessage.classList.add('hidden');
 };
 
 const playGame = function () {
