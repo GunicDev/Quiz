@@ -3,6 +3,7 @@ body {
   background-color: #025464;
   font-size: large;
   color: #e8aa42;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .homepage {
@@ -23,6 +24,7 @@ footer {
 
 .homepage,
 .best_player {
+  font-family: 'Courier New', Courier, monospace;
   background-color: #e57c23;
   margin: 0;
   display: flex;
@@ -30,6 +32,7 @@ footer {
   height: 100%;
 }
 .play_again {
+  font-family: 'Courier New', Courier, monospace;
   background-color: #e57c23;
   margin: 0;
   display: flex;
@@ -38,6 +41,7 @@ footer {
   height: 100%;
 }
 .play_again_container {
+  font-family: 'Courier New', Courier, monospace;
   background-color: #025464;
   border: solid 3px black;
   border-radius: 10px;
@@ -51,6 +55,7 @@ footer {
 }
 
 .homepage_container {
+  font-family: 'Courier New', Courier, monospace;
   background-color: #025464;
   border: solid 3px black;
   border-radius: 10px;
@@ -68,6 +73,7 @@ footer {
   text-align: center;
 }
 .start_button {
+  font-family: 'Courier New', Courier, monospace;
   margin: 2rem;
   font-size: xx-large;
   font-weight: 900;
@@ -148,6 +154,7 @@ footer {
 }
 
 .username_input {
+  font-family: 'Courier New', Courier, monospace;
   font-size: x-large;
   font-weight: 700;
   height: 50px;
@@ -194,6 +201,7 @@ footer {
 /* game page */
 
 .show_score_box {
+  font-family: 'Courier New', Courier, monospace;
   background-color: #025464;
   border: solid 3px black;
   border-radius: 10px;
@@ -243,6 +251,7 @@ footer {
 
 /* BOX BUTTONS */
 .answer_button {
+  font-family: 'Courier New', Courier, monospace;
   width: 100%;
   margin: 10px;
   padding: 15px 30px;
@@ -290,7 +299,6 @@ footer {
 }
 .question_animation_right {
   margin-right: 0;
-
   width: 100px;
   height: 100px;
   color: #f09819;
@@ -310,21 +318,67 @@ footer {
   font-weight: 900;
 }
 
-.lose_message {
-  flex-direction: row;
-  margin: 0 40%;
-  display: flex;
-  font-size: 50px;
-  font-weight: 900;
-  color: red;
-  text-align: center;
+/*YOUR SCORE*/
+
+.animate-charcter {
+  font-family: 'Courier New', Courier, monospace;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+  font-size: 90px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
 }
 
 /* BEST PLYERS*/
 .best_player_container {
+  font-family: 'Courier New', Courier, monospace;
   text-align: center;
   width: 80%;
   margin: 10%;
+}
+
+.best_player_effect {
+  font-family: 'Courier New', Courier, monospace;
+  --s: 0.1em; /* the thickness of the line */
+  --c: #f09819; /* the color */
+
+  color: #0000;
+  padding-bottom: var(--s);
+  background: linear-gradient(90deg, var(--c) 50%, #000 0)
+      calc(100% - var(--_p, 0%)) / 200% 100%,
+    linear-gradient(var(--c) 0 0) 0% 100% / var(--_p, 0%) var(--s) no-repeat;
+  -webkit-background-clip: text, padding-box;
+  background-clip: text, padding-box;
+  transition: 0.5s;
+}
+.best_player_effect:hover {
+  --_p: 100%;
+}
+
+.best_player_effect {
+  font-family: system-ui, sans-serif;
+  font-size: 5rem;
+  cursor: pointer;
 }
 /*TABLE*/
 

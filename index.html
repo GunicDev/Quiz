@@ -14,7 +14,7 @@
     <header>
       <h1 id="header-text">Welcome to Quiz</h1>
     </header>
-    <section id="homepage-section" class="homepage">
+    <section id="homepage-section" class="homepage hidden">
       <div class="homepage_container">
         <div class="user_container">
           <h1>Write your Name:</h1>
@@ -30,31 +30,42 @@
         </div>
       </div>
     </section>
-    <section id="play-again-section" class="play_again hidden>
-      <div class="lose_message">
-        <h1 >YOU LOSE!!!!</h1>
-      </div>
-      <div class="play_again_container">
-        
+    <section id="play-again-section" class="play_again">
+        <div class="play_again_container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h3  class="animate-charcter"> YOU LOSE!!</h3>
+          </div>
+        </div>                
         <div class="user_container">
-         
-
           <button onclick="playAgainButton()" class="start_button">
             PLAY AGAIN
-          </button>
-          <h1 id="show-player-score"></h1>
+          </button>         
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <h3 id="show-player-score" class="animate-charcter"> EKOSH</h3>
+              </div>
+            </div>
+          </div>
           <button onclick="goToHomePageButton()" class="start_button">
             HOME PAGE
           </button>
-          <h1 class="best_plyers_table" onclick="checkBestPlayer()">
+          <h1 class="best_player_effect" onclick="checkBestPlayer()">
             CHECK BEST PLAYERS!!!!
           </h1>
-        </div>
-      </div>
+        </div>   
+      </div>   
     </section>
     <section id="best-players-section" class="best_player hidden">
       <div class="best_player_container">
-        <h1>TOP PLAYERS!!!</h1>
+        <div class="container ">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h3  class="animate-charcter"> TOP PLAYERS</h3>
+            </div>
+          </div>
+        </div>
         <div>
           <button onclick="playAgainButton()" class="start_button">
             PLAY AGAIN
