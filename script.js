@@ -240,7 +240,7 @@ const playAgainButton = function () {
 };
 
 const goToHomePageButton = function () {
-  headerText.innerHTML = `Welcome Quiz`;
+  headerText.innerHTML = `Welcome to Quiz`;
   clearInterval(timer);
   timer = 0;
   homePage();
