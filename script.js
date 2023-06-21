@@ -30,7 +30,24 @@ let userSumScore = 0;
 let attemptsLeft = 5;
 const bestScores = [];
 let timer;
-const savePlayerAndScore = [];
+const savePlayerAndScore = [
+  {
+    playerName: 'laksd',
+    playerScore: 12,
+  },
+  {
+    playerName: 'laksdla',
+    playerScore: 1,
+  },
+  {
+    playerName: 'jfjdj',
+    playerScore: 2,
+  },
+  {
+    playerName: 'stop',
+    playerScore: 3,
+  },
+];
 let player = '';
 
 async function loadQuestion() {
@@ -253,12 +270,12 @@ const table = function () {
   savePlayerAndScore.sort((a, b) => b.playerScore - a.playerScore);
   savePlayerAndScore.forEach((value, i) => {
     console.log(value.playerScore);
+
     bestPlayerTable.innerHTML += `
     <div class="player_list">
     <p>${savePlayerAndScore[i].playerName}</p>
     <p>${savePlayerAndScore[i].playerScore}</p>
-  </div>
-   
+  </div>  
   `;
   });
 };
