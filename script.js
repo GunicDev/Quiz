@@ -22,6 +22,11 @@ const gameSection = document.getElementById('game-section');
 const lostGameSectio = document.getElementById('play-again-section');
 const bestPlayerSection = document.getElementById('best-players-section');
 
+const correctAnswerColorElement = document.getElementById(
+  'correct-answer-color'
+);
+const wrongAnswerColorElement = document.getElementById('wrong-answer-color');
+
 //Global storage data
 let clickedSolution = '';
 const storedAllAnswers = [];
@@ -124,11 +129,13 @@ function showBestScore(bestScores) {
 function addScore() {
   userSumScore++;
   userScore.innerHTML = userSumScore;
+  correctAnswerColor();
 }
 
 function numerOfAttempts() {
   attemptsLeft--;
   attemtsCounter.innerHTML = attemptsLeft;
+  wrongAnswerColor();
 
   if (attemptsLeft === 0) {
     attemptsLeft = 5;
@@ -177,6 +184,25 @@ const startLogOutTimer = function () {
   return timer;
 };
 
+const correctAnswerColor = function () {
+  correctAnswerColorElement.style.backgroundColor = 'green';
+  setTimeout(() => {
+    resetBackgroundColor(correctAnswerColorElement);
+  }, 1000);
+};
+
+const wrongAnswerColor = function () {
+  wrongAnswerColorElement.style.backgroundColor = 'red';
+  setTimeout(() => {
+    resetBackgroundColor(wrongAnswerColorElement);
+  }, 1000);
+};
+
+const resetBackgroundColor = function (div) {
+  //console.log(div);
+  div.style.backgroundColor = '#025464';
+};
+
 //HOME PAGE
 const plyerAndScore = function (player, score) {
   let plyerStatistic = {
@@ -184,7 +210,7 @@ const plyerAndScore = function (player, score) {
     playerScore: score,
   };
   savePlayerAndScore.push(plyerStatistic);
-  console.log(savePlayerAndScore);
+  //console.log(savePlayerAndScore);
 };
 
 const homePage = function () {
@@ -213,7 +239,7 @@ const bestScoreTable = function () {
 
 const lostGame = function () {
   plyerAndScore(player, userSumScore);
-  showPlayerScore.innerHTML = `You score : ${userSumScore}`;
+  showPlayerScore.innerHTML = `Your score : ${userSumScore}`;
   homepageSection.classList.add('hidden');
   lostGameSectio.classList.remove('hidden');
   gameSection.classList.add('hidden');
@@ -254,7 +280,7 @@ const table = function () {
   bestPlayerTable.innerHTML = '';
   savePlayerAndScore.sort((a, b) => b.playerScore - a.playerScore);
   savePlayerAndScore.forEach((value, i) => {
-    console.log(value.playerScore);
+    // console.log(value.playerScore);
 
     bestPlayerTable.innerHTML += `
     <div class="player_list">
