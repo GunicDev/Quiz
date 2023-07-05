@@ -63,32 +63,30 @@ async function loadQuestion() {
   storeDataInGlobalArrays(data.results[0]);
 }
 function showQuestion(data) {
-  // console.log(data);
+  
   questionFromServer.innerHTML = data.question;
 }
 
 function showAllAnswers(allAnswers) {
-  // console.log(allAnswers);
+ 
   showAnswers.innerHTML = '';
   allAnswers.forEach((answers, i) => {
     showAnswers.innerHTML += `<button id='${i}' onClick="getAnswer(${i})" class="answer_button" value='${answers}'>${answers}</button>`;
   });
 
-  //console.log(showAnswers);
+
 }
 
 function getAnswer(id) {
   const buttonClicked = document.getElementById(id);
 
   clickedSolution = buttonClicked.value;
-  //console.log(clickedSolution);
-  //console.log(globalCorrectAnswer);
-  //console.log(storedAllAnswers);
+
   CheckSolution(clickedSolution, globalCorrectAnswer);
 }
 
 function storeDataInGlobalArrays(data) {
-  //console.log(data);
+  
 
   const correctAnswer = data.correct_answer;
   globalCorrectAnswer = correctAnswer;
@@ -96,14 +94,14 @@ function storeDataInGlobalArrays(data) {
 
   const allAnswers = [correctAnswer, ...incorectAnswers];
   storedAllAnswers.push(allAnswers);
-  //console.log(allAnswers);
+  
 }
 
 function CheckSolution(solution, correctAnswer) {
   //show right aswer
-  console.log(solution, correctAnswer);
+  //console.log(solution, correctAnswer);
   if (solution === correctAnswer) {
-    //console.log('assa');
+   
 
     questionFromServer.innerHTML = '';
     showAnswers.innerHTML = '';
@@ -121,7 +119,7 @@ function showBestScore(bestScores) {
   const maxValue = Math.max(...bestScores);
 
   bestScore.innerHTML = maxValue;
-  // console.log(maxValue);
+  
 }
 
 //Counters
@@ -141,9 +139,9 @@ function numerOfAttempts() {
     attemptsLeft = 5;
     lostGame();
 
-    // console.log(userSumScore);
+    
     bestScores.push(userSumScore);
-    //console.log(bestScores);
+   
     userSumScore = 0;
     userScore.innerHTML = userSumScore;
     attemtsCounter.innerHTML = attemptsLeft;
@@ -199,7 +197,7 @@ const wrongAnswerColor = function () {
 };
 
 const resetBackgroundColor = function (div) {
-  //console.log(div);
+  
   div.style.backgroundColor = '#025464';
 };
 
@@ -210,7 +208,7 @@ const plyerAndScore = function (player, score) {
     playerScore: score,
   };
   savePlayerAndScore.push(plyerStatistic);
-  //console.log(savePlayerAndScore);
+ 
 };
 
 const homePage = function () {
@@ -280,7 +278,7 @@ const table = function () {
   bestPlayerTable.innerHTML = '';
   savePlayerAndScore.sort((a, b) => b.playerScore - a.playerScore);
   savePlayerAndScore.forEach((value, i) => {
-    // console.log(value.playerScore);
+    
 
     bestPlayerTable.innerHTML += `
     <div class="player_list">
