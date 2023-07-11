@@ -626,9 +626,4 @@ footer {
   .player_list p {
     font-size: small;
   }
-  footer {
-    margin: 0;
-    padding: 0.9rem;
-    height: 0px;
-  }
 }
