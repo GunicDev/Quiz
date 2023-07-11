@@ -626,4 +626,9 @@ footer {
   .player_list p {
     font-size: small;
   }
+
+  footer {
+    height: max-content;
+    margin: 0.5rem;
+  }
 }
