@@ -292,7 +292,6 @@ footer {
 /* QUESTION FONT AWSOM ANIMATION*/
 .question_animation_left {
   margin: 0;
-
   width: 100px;
   height: 100px;
   color: #f09819;
@@ -410,7 +409,10 @@ footer {
 
 /*MOBILE VERSION*/
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 720px) {
+  body {
+    font-size: small;
+  }
   .homepage,
   .best_player {
     font-family: 'Courier New', Courier, monospace;
@@ -424,7 +426,6 @@ footer {
     font-family: 'Courier New', Courier, monospace;
     background-color: #e57c23;
     margin: 0;
-
     width: 100%;
     height: 100%;
   }
@@ -435,27 +436,27 @@ footer {
     border-radius: 10px;
     box-shadow: #025464 0 4px 8px;
     color: #fff;
-    font-size: xx-large;
-    width: 750px;
+    width: 70%;
     height: 100%;
     text-align: center;
     margin: 10%;
   }
 
   .homepage_container {
+    padding: 0;
     font-family: 'Courier New', Courier, monospace;
     background-color: #025464;
     border: solid 3px black;
     border-radius: 10px;
     box-shadow: #025464 0 4px 8px;
     color: #fff;
-    font-size: xx-large;
     width: 100%;
     height: 100%;
+    margin: 10%;
     text-align: center;
-    margin: 15% 30% 15% 30%;
   }
   .user_container {
+    padding: 0;
     display: inline-block;
     margin: 0;
     width: 100%;
@@ -469,10 +470,18 @@ footer {
   .main_question_box {
     display: flex;
     text-align: center;
+    font-size: small;
+  }
+  .all_score_box {
+    width: 80%;
+  }
+
+  .all_score_box h1 {
     font-size: medium;
   }
   .show_score_box {
-    font-size: medium;
+    width: 80%;
+    font-size: small;
     font-family: 'Courier New', Courier, monospace;
     background-color: #025464;
     border: solid 3px black;
@@ -482,5 +491,134 @@ footer {
     margin: 1rem;
     display: inline-block;
     text-align: center;
+  }
+
+  .answer_button {
+    font-family: 'Courier New', Courier, monospace;
+    width: 100%;
+    margin: 10px;
+    padding: 15px 30px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+    display: block;
+    border: 0px;
+    font-size: small;
+    font-weight: 700;
+    box-shadow: 0px 0px 14px -7px #f09819;
+    background-image: linear-gradient(
+      45deg,
+      #ff512f 0%,
+      #f09819 51%,
+      #ff512f 100%
+    );
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+
+  .answer_button:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .answer_button:active {
+    transform: scale(0.95);
+  }
+
+  .animate-charcter {
+    font-size: large;
+  }
+
+  .start_button {
+    margin: 0;
+    max-width: 100%;
+    height: 100%;
+    font-size: medium;
+  }
+  .best_player_effect {
+    font-size: medium;
+  }
+  .error_message {
+    font-size: medium;
+  }
+
+  .start_button {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 2rem;
+    font-size: medium;
+    font-weight: 900;
+    height: 50px;
+    width: 80%;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+  }
+
+  .start_button:before {
+    content: '';
+    background: linear-gradient(
+      45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+  }
+
+  .start_button:active {
+    color: #000;
+  }
+
+  .start_button:active:after {
+    background: transparent;
+  }
+
+  .start_button:hover:before {
+    opacity: 1;
+  }
+
+  .start_button:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+
+  .player_list p {
+    font-size: small;
   }
 }
