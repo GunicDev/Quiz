@@ -413,6 +413,9 @@ footer {
   body {
     font-size: small;
   }
+  header {
+    font-size: medium;
+  }
   .homepage,
   .best_player {
     font-family: 'Courier New', Courier, monospace;
@@ -462,9 +465,18 @@ footer {
     width: 100%;
     text-align: center;
   }
+  .left_container {
+    width: 30%;
+  }
+  .right_container {
+    width: 70%;
+  }
 
   .hidden {
     display: none;
+  }
+  .question_box {
+    padding: 1rem;
   }
 
   .main_question_box {
